@@ -58,3 +58,69 @@ This separation improves code organization, maintainability, and future extensib
 - Add automated tests for state transitions and solution correctness.
 - Improve scalability with search pruning and compact state representations.
 
+
+---
+
+## 🎮 Game Mechanics & Rules
+
+### 🕹️ Gameplay Overview
+
+PuzzleForge is an interactive grid-based puzzle game that combines player decision-making with algorithm-driven AI solving. Players interact with the board through the Java Swing interface while the underlying solver explores possible game states.
+
+### 🎯 Objective
+
+- Reach the target configuration by making valid moves.
+- Solve the puzzle within the available time.
+- Complete the challenge while minimizing unnecessary moves.
+- Compete against the AI solver to compare problem-solving strategies.
+
+### ⚙️ How the Game Works
+
+1. **Initialize the Board:** The application creates a grid with an initial configuration and a target state.
+2. **Player Interaction:** The player makes moves through the graphical interface.
+3. **State Update:** The game updates the board configuration using its internal state representation.
+4. **AI Computation:** The solver searches possible configurations using the implemented graph-search algorithms.
+5. **Progress Evaluation:** The application checks the current configuration against the goal condition.
+6. **Game Completion:** The game ends when the puzzle is solved or the configured time limit expires.
+
+### 🤖 AI Solver
+
+The AI uses graph-search techniques to find solutions to the puzzle.
+
+- **Breadth-First Search (BFS):** Explores states level by level to find a shortest path when every move has equal cost.
+- **Dijkstra's Algorithm:** Finds a minimum-cost path when transitions have non-negative weights.
+- **Bitmask Encoding:** Represents grid configurations compactly, enabling efficient state comparison and storage.
+
+### 🏆 Challenge and Scoring
+
+The game can be described in terms of its challenge elements:
+
+- **Time Limit:** A countdown adds a time-management element.
+- **Move Efficiency:** Fewer moves can be used as a measure of solution efficiency.
+- **Player vs. AI:** Compare human decisions with algorithm-generated solutions.
+
+### 🔄 Core Game Loop
+
+```text
+Initialize Puzzle
+       ↓
+Display Grid
+       ↓
+Accept Player Move
+       ↓
+Update Game State
+       ↓
+Check Goal Condition
+       ↓
+Continue or End Game
+```
+
+### 💡 Design Goals
+
+- Make Data Structures and Algorithms concepts interactive.
+- Demonstrate state-space search in a visual application.
+- Explore compact state representation through bit manipulation.
+- Separate game logic from graphical interface code.
+
+
+
